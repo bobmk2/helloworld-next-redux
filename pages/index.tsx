@@ -1,25 +1,63 @@
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCount, incrementCount, decrementCount, resetCount } from '../src/actions/counter-action';
+import { State } from '../src/types/states';
+import { NextJSContext } from 'next-redux-wrapper';
 
-const mapStoreStateToProps = (state: any) => {
-  return {
-    count: state.counter.count
-  };
+type OwnProps = {
+  initialCount?: number;
 };
 
-const IndexPage = (props: any) => {
+type PropTypes = OwnProps;
+
+const IndexPage = (props: PropTypes) => {
+  const counter = useSelector((state: State) => state.counter);
+  const dispatch = useDispatch();
+
+  async function handleClickIncrement() {
+    await dispatch(incrementCount());
+  }
+
+  async function handleClickDecrement() {
+    await dispatch(decrementCount());
+  }
+
+  async function handleClickReset() {
+    await dispatch(resetCount());
+  }
+
+  async function handleClickFetch() {
+    await dispatch(fetchCount());
+  }
+
   return (
     <div>
       <h1>nextjs-redux-ssr</h1>
-      {props.propsCount} /{props.count}
+      <div>Initial count: {props.initialCount}</div>
+      <div>Count: {counter.count}</div>
+      <div>
+        <button disabled={counter.isLoading} onClick={handleClickIncrement}>
+          ++ Increment
+        </button>
+        <button disabled={counter.isLoading} onClick={handleClickDecrement}>
+          -- Decrement
+        </button>
+      </div>
+      <div>
+        <button disabled={counter.isLoading} onClick={handleClickReset}>
+          =0 Reset
+        </button>
+        <button disabled={counter.isLoading} onClick={handleClickFetch}>
+          >> Fetch
+        </button>
+      </div>
+      {counter.isLoading ? <h5>Loading...</h5> : null}
     </div>
   );
 };
 
-IndexPage.getInitialProps = async ({ store, isServer }: { store: any; isServer: boolean }) => {
-  console.log('store: ', store);
-  console.log('isServer: ', isServer);
-  store.dispatch({ type: 'success increment counter', payload: { count: 1000 } });
-  return { propsCount: 123 };
+IndexPage.getInitialProps = async ({ store }: NextJSContext) => {
+  await store.dispatch<any>(fetchCount());
+  return { initialCount: store.getState().counter.count };
 };
 
-export default connect(mapStoreStateToProps)(IndexPage);
+export default IndexPage;

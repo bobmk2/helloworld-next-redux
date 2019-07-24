@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "nextjs-redux-ssr",
+  "builds": [{ "src": "package.json", "use": "@now/next" }, { "src": "api/**/*", "use": "@now/node" }],
+  "routes": [{ "src": "/api/counter(|/increment|/decrement|/reset)$", "dest": "/api/counter.ts" }]
+}
