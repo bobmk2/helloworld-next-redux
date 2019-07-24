@@ -8,11 +8,11 @@ nextjs-redux-ssr
 
 ## Using ⭐
 
-- [Next.js](https://nextjs.org/)
-- [Redux](https://redux.js.org/)
-- [redux-thunk](https://github.com/reduxjs/redux-thunk)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Now](https://zeit.co/now)
+- [Next.js](https://nextjs.org/) `v9.x`
+- [Redux](https://redux.js.org/) `v4.x`
+- [redux-thunk](https://github.com/reduxjs/redux-thunk) `v2.x`
+- [TypeScript](https://www.typescriptlang.org/) `v3.5.x`
+- [Now](https://zeit.co/now) `v15.x`
 
 ## Intro 🚀
 
