@@ -35,6 +35,10 @@ npm run deploy:now
 
 > Note: You should update API_ENDPOINT of production config at next.config.js before your deploying.
 
+## Deployed page 𝚫
+
+- https://nextjs-redux-ssr.bobmk2.now.sh/
+
 ## Flow memo 📝
 
 1. `Server` Get current count value in server.
