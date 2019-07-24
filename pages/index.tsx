@@ -31,7 +31,7 @@ const IndexPage = (props: PropTypes) => {
 
   return (
     <div>
-      <h1>nextjs-redux-ssr</h1>
+      <h1>helloworld-next-redux</h1>
       <div>Initial count: {props.initialCount}</div>
       <div>Count: {counter.count}</div>
       <div>

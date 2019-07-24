@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-redux-ssr",
+  "name": "helloworld-next-redux",
   "version": "1.0.0",
   "description": "next.js + Now + redux + redux-thunk + typescript",
   "scripts": {

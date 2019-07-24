@@ -6,8 +6,8 @@ const prodConfig = {
   ...config,
   env: {
     // vvv Update vvv
-    // ex) https://nextjs-redux-ssr.{your-name}.now.sh/api
-    API_ENDPOINT: 'https://nextjs-redux-ssr.bobmk2.now.sh/api'
+    // ex) https://helloworld-next-redux.{your-name}.now.sh/api
+    API_ENDPOINT: 'https://helloworld-next-redux.bobmk2.now.sh/api'
     // ^^^^^^^^^^^^^^
   }
 };

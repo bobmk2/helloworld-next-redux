@@ -1,4 +1,4 @@
-nextjs-redux-ssr
+helloworld-next-redux
 ====
 
 ## What is this ❓
@@ -37,7 +37,7 @@ npm run deploy:now
 
 ## Deployed page 𝚫
 
-- https://nextjs-redux-ssr.bobmk2.now.sh/
+- https://helloworld-next-redux.bobmk2.now.sh/
 
 ## Flow memo 📝
 
